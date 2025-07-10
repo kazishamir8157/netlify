@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connect Gmail IMAP</title>
+</head>
+<body>
+  <h2>📬 Gmail Folders</h2>
+  <div id="folders">Loading...</div>
+
+  <script>
+    fetch("https://kazishamir95.unaux.com/index.php")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("folders").innerHTML = data;
+      })
+      .catch(error => {
+        document.getElementById("folders").innerText = "⚠️ Error loading folders.";
+        console.error("Error:", error);
+      });
+  </script>
+</body>
+</html>
